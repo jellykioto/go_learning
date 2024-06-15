@@ -1,17 +1,17 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	var n, num, max int
-	_, _ = fmt.Scan(&n, &max)
-	for i := 1; i < n; i++ {
-		_, _ = fmt.Scan(&num)
-		if num > max {
-			max = num
-		}
+	var n, m int
+	fmt.Scan(&n, &m)
+	fmt.Print(sequenceAverage(n) + sequenceAverage(m))
+}
+
+func sequenceAverage(end int) float64 {
+	var sum float64 = 0.0
+	for i := 1.0; i <= float64(end); i++ {
+		sum += i
 	}
-	fmt.Print(max)
+	return sum / float64(end)
 }
